@@ -5,7 +5,7 @@ from PIL import Image
 
 # Define the prediction function
 def model_prediction(test_image):
-    model = tf.keras.models.load_model("trained_plant_disease_model.keras")
+    model = tf.keras.models.load_model("Models/trained_plant_disease_model.keras")
     image = tf.keras.preprocessing.image.load_img(test_image, target_size=(128, 128))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
     input_arr = np.array([input_arr])  # Convert single image to batch
@@ -25,7 +25,7 @@ if app_mode == "HOME":
     # Title and description
     st.markdown(
         """
-        <h1 style='text-align: center; color: green;'>AgriSens: Smart Disease Detection</h1>
+        <h1 style='text-align: center; color: green;'>Agri.ai: Smart Disease Detection</h1>
         <p style='text-align: center; font-size: 18px;'>
             Empowering Farmers with AI-Powered Plant Disease Recognition.<br>
             Upload plant images to detect diseases accurately and access actionable insights.
